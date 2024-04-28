@@ -1,0 +1,9 @@
+<mat-card class="noteCard" [class.selected]="isSelected" (click)="noteClickHandler()">
+	<p class="noteTitle" [class.noname]="!note?.title">
+		{{ note?.title || 'No name' }}
+	</p>
+	<div class="noteDetail">
+		<span class="noteDate">{{ noteDate }}</span>
+		<span class="noteBody">{{ note?.body }}</span>
+	</div>
+</mat-card>

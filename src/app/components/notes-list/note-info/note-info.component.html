@@ -1,0 +1,28 @@
+<div class="noteInfo">
+	<p [hidden]="note" class="nodata">Select note to see note info</p>
+	<form class="noteForm" [hidden]="!note">
+		<p class="noteDate">{{ noteDate }}</p>
+		<mat-form-field class="noteTitle">
+			<mat-label>Title</mat-label>
+			<input
+				matInput
+				placeholder="Add Title"
+				(keyup)="textInputHandler()"
+				#titleTextarea
+				[value]="note ? note.title : ''"
+			/>
+		</mat-form-field>
+
+		<mat-form-field class="noteBody">
+			<mat-label>Description</mat-label>
+			<textarea
+				matInput
+				placeholder="Add Description"
+				(keyup)="textInputHandler()"
+				#bodyTextarea
+				cdkTextareaAutosize
+				>{{ note ? note.body : '' }}</textarea
+			>
+		</mat-form-field>
+	</form>
+</div>

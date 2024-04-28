@@ -1,0 +1,41 @@
+<mat-toolbar class="header">
+	<a mat-button href="/" class="headerTitle" color="primary">
+		<mat-icon>notes</mat-icon>
+		<h1>Notes</h1>
+	</a>
+
+	<div class="iconsBox">
+		<button
+			mat-icon-button
+			[hidden]="searchOpen"
+			matTooltip="Find Note"
+			(click)="toggleOpenSearchInput()"
+		>
+			<mat-icon>search</mat-icon>
+		</button>
+		<div class="noteSearch" [hidden]="!searchOpen">
+			<mat-icon>search</mat-icon>
+			<input
+				type="search"
+				placeholder="Search"
+				(keyup)="searchHandler(searchInput)"
+				(search)="searchHandler(searchInput)"
+				(blur)="toggleOpenSearchInput()"
+				#searchInput
+			/>
+		</div>
+		<button mat-icon-button [matMenuTriggerFor]="menu">
+			<mat-icon>more_vert</mat-icon>
+		</button>
+		<mat-menu #menu="matMenu">
+			<button mat-menu-item (click)="navigateToPersonPage()">
+				<mat-icon>person</mat-icon>
+				<span>User info</span>
+			</button>
+			<button mat-menu-item (click)="handleLogout()">
+				<mat-icon>logout</mat-icon>
+				<span>Log out</span>
+			</button>
+		</mat-menu>
+	</div>
+</mat-toolbar>

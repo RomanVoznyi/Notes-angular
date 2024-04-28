@@ -1,0 +1,61 @@
+.notesPage {
+	display: flex;
+	align-items: stretch;
+	min-height: calc(100vh - 64px);
+}
+
+.notesContainer {
+	position: relative;
+	width: 25%;
+	max-height: calc(100vh - 64px);
+	overflow-y: auto;
+	border-right: 1px solid #cacaca;
+
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: rgba(0, 92, 187, 0.5);
+		border-radius: 10px;
+
+		&:hover {
+			background-color: #005cbb;
+		}
+	}
+
+	.serviceBtnBox {
+		position: sticky;
+		top: 0;
+		left: 0;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: right;
+		margin-bottom: 10px;
+		border-bottom: 1px solid #cacaca;
+		background-color: #ffffff;
+		z-index: 1;
+	}
+
+	.notesList {
+		padding: 10px;
+	}
+
+	app-note-card {
+		display: block;
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	.nodata {
+		text-align: center;
+		font-style: italic;
+	}
+}
+
+app-note-info {
+	width: 75%;
+	padding: 10px;
+}

@@ -1,0 +1,34 @@
+<div class="notesPage">
+	<div class="notesContainer">
+		<div class="serviceBtnBox">
+			<button
+				mat-icon-button
+				matTooltip="Create Note"
+				color="primary"
+				(click)="addEditNoteHandler()"
+			>
+				<mat-icon>edit_note</mat-icon>
+			</button>
+			<button
+				mat-icon-button
+				matTooltip="Delete Note"
+				color="primary"
+				[disabled]="!service?.selectedNote"
+				(click)="deleteNoteHandler()"
+			>
+				<mat-icon>delete</mat-icon>
+			</button>
+		</div>
+		<p *ngIf="!notesList.length" class="nodata">No notes available</p>
+		<p *ngIf="notesList.length && !filteredNotes.length" class="nodata">Nothing was found</p>
+		<div *ngIf="notesList.length" class="notesList">
+			<app-note-card
+				(noteClicked)="handleSelectNote(note)"
+				[note]="note"
+				*ngFor="let note of filteredNotes"
+			>
+			</app-note-card>
+		</div>
+	</div>
+	<app-note-info></app-note-info>
+</div>

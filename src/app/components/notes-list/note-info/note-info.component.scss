@@ -1,0 +1,39 @@
+.noteInfo {
+	.nodata {
+		text-align: center;
+		font-style: italic;
+	}
+
+	.noteDate {
+		font-size: 14px;
+		text-align: center;
+		color: #5b5b5b;
+	}
+
+	.noteForm {
+		width: 100%;
+	}
+
+	.noteTitle,
+	.noteBody {
+		width: 100%;
+
+		& textarea.mdc-text-field__input {
+			min-height: 100px;
+			max-height: 500px;
+			overflow-y: auto;
+
+			&::-webkit-scrollbar {
+				width: 6px;
+			}
+			&::-webkit-scrollbar-thumb {
+				background-color: rgba(0, 92, 187, 0.5);
+				border-radius: 10px;
+
+				&:hover {
+					background-color: #005cbb;
+				}
+			}
+		}
+	}
+}

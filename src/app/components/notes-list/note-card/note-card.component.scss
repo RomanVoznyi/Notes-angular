@@ -1,0 +1,47 @@
+.noteCard {
+	padding: 10px;
+	border-radius: 8px;
+	border: 1px solid #cacaca;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+
+	&.selected {
+		background-color: #ffd500;
+	}
+}
+
+.noteTitle {
+	width: 100%;
+	margin-bottom: 5px;
+	font-size: 16px;
+	font-weight: 500;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+
+	&.noname {
+		font-weight: 400;
+		font-style: italic;
+		color: #5b5b5b;
+	}
+}
+
+.noteDetail {
+	display: flex;
+	gap: 5px;
+}
+
+.noteDate {
+	font-size: 14px;
+	font-weight: 500;
+	white-space: nowrap;
+}
+
+.noteBody {
+	width: 100%;
+	font-size: 14px;
+	color: #5b5b5b;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
